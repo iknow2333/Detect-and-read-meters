@@ -1,3 +1,39 @@
+# 这段脚本提供了一系列文件系统操作和输入/输出工具函数，风格类似于Linux shell命令。以下是一些主要函数的解释：
+# 常见文件和目录操作：
+
+#     mkdir(path): 如果目标目录不存在，则创建该目录及其父目录。
+#     make_parent_dir(path): 为文件创建父目录。
+#     pwd(): 返回当前工作目录。
+#     get_dir(path): 返回给定路径的目录部分。
+#     get_parent_dir(path): 获取路径的父目录。
+#     get_filename(path): 返回路径的文件名部分。
+#     get_absolute_path(p): 将路径转换为绝对路径。
+#     cd(p): 更改当前工作目录。
+#     ls(path, suffix): 列出目录下的文件，可选择按后缀过滤。
+#     exists(path), not_exists(path): 检查路径是否存在或不存在。
+
+# 文件读写和序列化：
+
+#     dump(path, obj): 将Python对象序列化到文件中。
+#     load(path): 从文件中反序列化Python对象。
+#     read_lines(p), write_lines(p, lines): 读取或写入文件的行。
+#     cat(p): 返回文件的全部文本内容。
+
+# 特定格式的文件操作：
+
+#     load_mat(path), dump_mat(path, dict_obj): 加载或保存.mat（MATLAB格式）文件。
+#     create_h5(path), open_h5(path), read_h5(h5, key), read_h5_attrs(h5, key, attrs): 创建、打开HDF5文件及读取数据和属性。
+
+# 文件管理和搜索：
+
+#     copy(src, dest), remove(p): 复制或删除文件。
+#     search(pattern, path, file_only): 在目录及其子目录中搜索匹配特定模式的文件。
+#     dump_json(path, data), load_json(path): 存储或加载JSON格式的数据。
+
+# 其他：
+
+#     get_file_size(path, unit): 获取文件大小，并可选择不同的单位（KB、MB、GB）。
+
 #coding=utf-8
 '''
 Created on 2016年9月27日
