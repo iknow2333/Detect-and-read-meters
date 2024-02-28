@@ -1,3 +1,45 @@
+# 这段代码提供了一系列与图像处理和计算几何相关的工具函数和类，主要用于深度学习和计算机视觉任务，特别是在对象检测和分割的背景下。下面是每个函数或类的简要说明：
+
+#     get_index: 返回列表中所有与给定值匹配的元素的索引。
+
+#     to_device: 将一个或多个PyTorch张量移到配置中指定的设备（如CPU或GPU）。
+
+#     mkdirs: 创建一个新目录，如果该目录的父目录不存在，则连同父目录一起创建。
+
+#     rescale_result: 将图像和边界框轮廓从原始尺寸重新缩放到指定的高度和宽度。
+
+#     fill_hole: 使用flood fill算法填充二值掩码图像中的空洞。
+
+#     regularize_sin_cos: 规范化正弦和余弦值，以确保它们的平方和为1（保持在单位圆上）。
+
+#     gaussian2D: 生成一个二维高斯核，用于图像处理中的平滑和滤波。
+
+#     draw_gaussian: 在热图上绘制以指定中心和半径的高斯分布。
+
+#     gaussian_radius: 计算高斯核的半径，以保证检测框之间的最小重叠度。
+
+#     point_dist_to_line: 计算点到直线的距离。
+
+#     AverageMeter: 一个用于跟踪和计算值平均数的实用类。
+
+#     norm2: 计算向量的2-范数。
+
+#     cos: 计算两个向量之间的余弦值。
+
+#     vector_sin, vector_cos: 计算二维向量的正弦和余弦值。
+
+#     find_bottom: 查找多边形底部边缘的函数，通常用于文本检测中，以确定文本方向。
+
+#     split_long_edges, find_long_edges: 这些函数用于处理多边形的边缘，将它们分割成长边和短边，通常用于改善多边形的近似和处理。
+
+#     split_edge_seqence, split_edge_seqence_by_step: 这些函数用于按指定数量的部分或步骤来分割多边形的长边，用于生成更细致的边界表示。
+
+#     disjoint_find, disjoint_merge: 这些是并查集算法的一部分，用于合并多个多边形或集合。
+
+#     merge_polygons: 使用Shapely库合并多个多边形，通常在多边形检测后合并重叠或接近的多边形。
+
+# 这些函数和类为处理图像中的几何形状提供了一系列工具，特别适合于处理由深度学习模型输出的检测框和分割掩码。
+
 import numpy as np
 import errno
 import os
