@@ -1,3 +1,29 @@
+# 这段代码定义了一个用于深度学习项目的配置管理。这里使用 EasyDict 来创建一个易于访问的配置字典 config，并提供了默认设置。接下来，我将详细解释代码的关键部分：
+
+#     配置参数设置：
+#         config.batch_size: 设置批处理大小。
+#         config.max_epoch: 设置训练的最大轮次。
+#         config.start_epoch: 设置训练开始的轮次，默认为0。
+#         config.lr: 设置学习率。
+#         config.cuda: 指示是否使用CUDA（GPU加速）。
+#         config.input_size: 设置输入图像的大小。
+#         config.max_annotation 和 config.max_roi: 设置每个图像的最大多边形标注和区域感兴趣的数量。
+#         config.max_points: 每个多边形的最大点数。
+#         config.use_hard: 是否使用难以识别的样本。
+#         config.tr_thresh 和 config.tcl_thresh: 设置文本区域和文本连通区域的阈值。
+#         config.expend: 设置后处理中的扩展比率。
+#         config.k_at_hop 和 config.active_connection: 用于定义图结构的参数。
+#         config.graph_link 和 config.link_thresh: 用于定义是否使用图连接和图连接的阈值。
+
+#     函数 update_config：
+#         此函数用于将额外的配置（通常是从命令行或外部文件读取的）更新到现有配置中。
+#         它遍历额外配置中的所有项目，并将其添加或更新到主配置中。
+
+#     函数 print_config：
+#         此函数用于打印当前的配置设置。
+#         遍历配置字典并打印每个键值对。
+
+# 这种配置管理方式在机器学习和深度学习项目中非常常见，因为它提供了一种灵活的方式来维护和更新实验设置。通过将配置参数集中在一个地方，可以轻松调整实验参数，同时确保代码的整洁和可维护性。此外，使用 EasyDict 允许通过属性访问而不是字典键访问，这使得代码更加直观和易于编写。
 from easydict import EasyDict
 import torch
 import os
