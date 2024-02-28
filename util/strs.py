@@ -1,3 +1,39 @@
+# int_array_to_str: 将整数数组转换为字符串。
+
+# join: 将数组元素连接成一个字符串，元素之间用指定的分隔符连接。
+
+# is_str: 检查给定的对象是否是字符串。
+
+# to_lowercase: 将字符串转换为小写。
+
+# to_uppercase: 将字符串转换为大写。
+
+# ends_with: 检查字符串是否以指定的后缀结束。可以忽略大小写。
+
+# starts_with: 检查字符串是否以指定的前缀开始。可以忽略大小写。
+
+# contains: 检查字符串是否包含指定的子串。可以忽略大小写。
+
+# index_of: 返回子串在字符串中第一次出现的索引位置。
+
+# replace_all: 替换字符串中所有匹配项。支持正则表达式。
+
+# remove_all: 从字符串中移除所有匹配项。
+
+# split: 根据分隔符或正则表达式分割字符串。
+
+# remove_invisible: 移除字符串中的不可见字符，如空格、换行符等。
+
+# find_all: 在字符串中查找所有符合正则表达式的子串。
+
+# is_none_or_empty: 检查字符串是否为空或者为None。
+
+# to_json: 将对象转换为JSON字符串。
+
+# to_list: 将逗号分隔的数值字符串转换为列表。
+
+# to_tuple: 将逗号分隔的数值字符串转换为元组
+
 # encoding = utf-8
 def int_array_to_str(arr):
     """turn an int array to a str"""
