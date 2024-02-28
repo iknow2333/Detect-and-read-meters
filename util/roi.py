@@ -1,3 +1,23 @@
+    # roi_transform 函数：
+    #     输入参数包括特征图（feature），一个代表ROI的边界框（box），以及输出图像的大小（size）。
+    #     该函数首先根据给定的ROI坐标（边界框）和目标大小，计算从原图到目标图像大小的仿射变换矩阵。
+    #     使用 cv2.getAffineTransform 计算仿射变换矩阵，然后通过 param2theta 函数转换该矩阵，使其适用于PyTorch的仿射网格函数。
+    #     应用这个变换矩阵，使用 torch.nn.functional.affine_grid 和 torch.nn.functional.grid_sample 对原始特征图进行变换，得到旋转并裁剪后的特征图。
+    #     最后，将变换后的特征图转换为灰度图。
+
+    # param2theta 函数：
+    #     这个函数用于将OpenCV的仿射变换矩阵转换成PyTorch的theta参数，PyTorch用这些参数在仿射变换中生成网格。
+    #     它首先将仿射变换矩阵扩展为3x3矩阵，然后求逆（因为在PyTorch中使用的是反向映射）。
+    #     接着，它根据原图和目标图像的尺寸调整变换矩阵的元素。
+
+    # batch_roi_transform 函数：
+    #     这个函数对一批图像和对应的ROI边界框进行处理。
+    #     它遍历每个图像和相应的边界框，使用 roi_transform 函数对每个ROI进行变换，并收集所有处理后的ROI。
+    #     最后，将所有ROI堆叠成一个新的批次张量。
+
+    # rgb_to_grayscale 函数：
+    #     这个函数将RGB图像转换为灰度图像，使用的是ITU-R 601-2 luma转换公式。
+    #     它检查输入图像是否为3通道，然后应用转换公式。
 import cv2
 import torch
 import numpy as np
