@@ -1,5 +1,51 @@
 #图形预处理和增强
+    # crop_first 函数：对给定的图像和多边形集合进行预处理，通过缩放来减少图像的尺寸，并更新多边形的坐标以匹配新的图像尺寸。它还确保裁剪区域不会穿过文本区域。
 
+    # Compose 类：组合多个图像变换操作。它按顺序应用提供的图像变换列表。
+
+    # Normalize 类：标准化图像数据，使其平均值为0，标准差为1。
+
+    # MinusMean 类：从图像中减去均值，通常用于颜色标准化。
+
+    # RandomMirror 类：随机对图像进行水平翻转，并相应更新多边形的坐标。
+
+    # AugmentColor 类：对图像颜色进行增强，如添加噪声等。
+
+    # RandomContrast 类：随机调整图像的对比度。
+
+    # RandomBrightness 类：随机调整图像的亮度。
+
+    # RandomErasing 类：随机选择图像的一个区域并擦除，这是一种数据增强技术。
+
+    # RandomMixUp 类：混合两个图像和它们的标签，这是另一种数据增强技术。
+
+    # Rotate 类：随机旋转图像，并相应更新多边形的坐标。
+
+    # RotatePadding 类：旋转图像并添加填充，确保图像保持同样的尺寸。
+
+    # SquarePadding 类：对图像进行填充，使其成为正方形，通常用于确保网络输入的统一性。
+
+    # RandomImgCropPatch 类：随机裁剪图像的一个区域并使用它作为新图像。
+
+    # RandomCropFlip 类：随机裁剪和翻转图像。
+
+    # RandomResizedCrop 类：随机裁剪图像并调整大小。
+
+    # RandomResizeScale 类：随机调整图像的大小和比例。
+
+    # Resize 类：调整图像的尺寸。
+
+    # ResizeSquare 类：将图像调整为指定的大小，保持宽高比不变。
+
+    # ResizeLimitSquare 类：将图像调整为正方形，同时限制其最大尺寸。
+
+    # RandomResizePadding 类：随机调整图像的大小并添加填充。
+
+    # Augmentation 类：定义一个特定的增强流程，包括缩放、裁剪、旋转、填充等。
+
+    # BaseTransform 类：基础变换流程，通常包括尺寸调整和标准化。
+
+    # BaseTransformNresize 类：基础变换流程，不包括重新调整尺寸，只包括标准化。
 import numpy as np
 import math
 import cv2
